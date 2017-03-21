@@ -15,6 +15,11 @@
 		49F07CCE1E81847300AFD134 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F07CCC1E81847300AFD134 /* Main.storyboard */; };
 		49F07CD01E81847300AFD134 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F07CCF1E81847300AFD134 /* Assets.xcassets */; };
 		49F07CD31E81847300AFD134 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F07CD11E81847300AFD134 /* LaunchScreen.storyboard */; };
+		49F07D031E81871E00AFD134 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F07CFE1E81871E00AFD134 /* background.png */; };
+		49F07D041E81871E00AFD134 /* bottomPipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F07CFF1E81871E00AFD134 /* bottomPipe.png */; };
+		49F07D051E81871E00AFD134 /* floor.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F07D001E81871E00AFD134 /* floor.png */; };
+		49F07D061E81871E00AFD134 /* player.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 49F07D011E81871E00AFD134 /* player.atlas */; };
+		49F07D071E81871E00AFD134 /* topPipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 49F07D021E81871E00AFD134 /* topPipe.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		49F07CCF1E81847300AFD134 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49F07CD21E81847300AFD134 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49F07CD41E81847300AFD134 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49F07CFE1E81871E00AFD134 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		49F07CFF1E81871E00AFD134 /* bottomPipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottomPipe.png; sourceTree = "<group>"; };
+		49F07D001E81871E00AFD134 /* floor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floor.png; sourceTree = "<group>"; };
+		49F07D011E81871E00AFD134 /* player.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = player.atlas; sourceTree = "<group>"; };
+		49F07D021E81871E00AFD134 /* topPipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topPipe.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,11 @@
 		49F07CC11E81847300AFD134 /* HappyBird */ = {
 			isa = PBXGroup;
 			children = (
+				49F07CFE1E81871E00AFD134 /* background.png */,
+				49F07CFF1E81871E00AFD134 /* bottomPipe.png */,
+				49F07D001E81871E00AFD134 /* floor.png */,
+				49F07D011E81871E00AFD134 /* player.atlas */,
+				49F07D021E81871E00AFD134 /* topPipe.png */,
 				49F07CC21E81847300AFD134 /* AppDelegate.swift */,
 				49F07CC41E81847300AFD134 /* GameScene.sks */,
 				49F07CC61E81847300AFD134 /* Actions.sks */,
@@ -133,7 +148,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				49F07CCE1E81847300AFD134 /* Main.storyboard in Resources */,
+				49F07D061E81871E00AFD134 /* player.atlas in Resources */,
+				49F07D031E81871E00AFD134 /* background.png in Resources */,
+				49F07D051E81871E00AFD134 /* floor.png in Resources */,
 				49F07CC51E81847300AFD134 /* GameScene.sks in Resources */,
+				49F07D071E81871E00AFD134 /* topPipe.png in Resources */,
+				49F07D041E81871E00AFD134 /* bottomPipe.png in Resources */,
 				49F07CD01E81847300AFD134 /* Assets.xcassets in Resources */,
 				49F07CD31E81847300AFD134 /* LaunchScreen.storyboard in Resources */,
 				49F07CC71E81847300AFD134 /* Actions.sks in Resources */,

@@ -9,32 +9,57 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
+    var myBackground = SKSpriteNode()
+    var myFloor1 = SKSpriteNode()
+    var myFloor2 = SKSpriteNode()
+    let birdAtlas = SKTextureAtlas(named: "player.atlas")
+    var birdSprites = Array<SKTexture>()
+    var bird = SKSpriteNode()
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
     override func didMove(to view: SKView) {
+        myBackground = SKSpriteNode(imageNamed: "background")
+        myBackground.anchorPoint = CGPoint(x: 0.5, y: 1);
+        myBackground.position = CGPoint(x: 0,y: 40);
+        myBackground.setScale(1.5)
         
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
+        myFloor1 = SKSpriteNode(imageNamed: "floor")
+        myFloor1.anchorPoint = CGPoint(x: 0.5, y: 3);
+        myFloor1.position = CGPoint(x: 0, y: 0);
+        myFloor1.setScale(1.5)
         
-        // Create shape node to use during mouse interaction
-        let w = (self.size.width + self.size.height) * 0.05
-        self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
+        myFloor2 = SKSpriteNode(imageNamed: "floor")
+        myFloor2.anchorPoint = CGPoint(x: 0.5, y: 3);
+        myFloor2.position = CGPoint(x: myFloor1.size.width-1, y: 0);
+        myFloor2.setScale(1.5)
         
-        if let spinnyNode = self.spinnyNode {
-            spinnyNode.lineWidth = 2.5
-            
-            spinnyNode.run(SKAction.repeatForever(SKAction.rotate(byAngle: CGFloat(M_PI), duration: 1)))
-            spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
-                                              SKAction.fadeOut(withDuration: 0.5),
-                                              SKAction.removeFromParent()]))
-        }
+        birdSprites.append(birdAtlas.textureNamed("player1"))
+        birdSprites.append(birdAtlas.textureNamed("player2"))
+        birdSprites.append(birdAtlas.textureNamed("player3"))
+        birdSprites.append(birdAtlas.textureNamed("player4"))
+        
+        bird = SKSpriteNode(texture: birdSprites[0])
+        bird.position = CGPoint(x: self.frame.midX, y: self.frame.midY);
+        bird.size.width = bird.size.width / 8
+        bird.size.height = bird.size.height / 8
+        
+        let animateBird = SKAction.animate(with: self.birdSprites, timePerFrame: 0.1)
+        let repeatAction = SKAction.repeatForever(animateBird)
+        self.bird.run(repeatAction)
+        
+        
+        
+        self.backgroundColor = SKColor(red: 80.0/255.0, green: 192.0/255.0, blue: 203.0/255.0, alpha: 1.0)
+        
+        addChild(self.myBackground)
+        addChild(self.myFloor1)
+        addChild(self.myFloor2)
+        addChild(self.bird)
+        
+        
     }
     
     
@@ -63,11 +88,7 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let label = self.label {
-            label.run(SKAction.init(named: "Pulse")!, withKey: "fadeInOut")
-        }
-        
-        for t in touches { self.touchDown(atPoint: t.location(in: self)) }
+
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
